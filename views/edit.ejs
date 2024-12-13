@@ -1,0 +1,52 @@
+<%- include("partials/header") -%>
+
+<h1 style="color: #5c7580;">Edit</h1>
+<form method="POST" action="/edit/<%= blogs._id %>">
+  <div class="form-group">
+    <label>Blog id</label>
+    <input type="text" name="ID" class="form-control" value="<%= blogs._id %>" readonly>
+  </div>
+
+  <div class="form-group">
+    <label>Author</label>
+    <input type="text" name="Author" class="form-control" placeholder="Author Name" required autocomplete="off" spellcheck="false" value="<%= blogs.author %>" readonly>
+  </div>
+
+  <div class="form-group">
+    <label>Title</label>
+    <input type="text" name="title" class="form-control" placeholder="Blog Title" required autocomplete="off" spellcheck="false" value="<%= blogs.title %>">
+  </div>
+
+  <div class="form-group">
+    <label>Category</label>
+    <select name="category" class="form-control" required>
+      <option value="Technology" <%= blogs.category === 'Technology' ? 'selected' : '' %>>Technology</option>
+      <option value="Health" <%= blogs.category === 'Health' ? 'selected' : '' %>>Health</option>
+      <option value="Travel" <%= blogs.category === 'Travel' ? 'selected' : '' %>>Travel</option>
+      <option value="Food" <%= blogs.category === 'Food' ? 'selected' : '' %>>Food</option>
+      <option value="Lifestyle" <%= blogs.category === 'Lifestyle' ? 'selected' : '' %>>Lifestyle</option>
+      <option value="Finance" <%= blogs.category === 'Finance' ? 'selected' : '' %>>Finance</option>
+      <option value="Education" <%= blogs.category === 'Education' ? 'selected' : '' %>>Education</option>
+      <option value="Entertainment" <%= blogs.category === 'Entertainment' ? 'selected' : '' %>>Entertainment</option>
+      <option value="Sports" <%= blogs.category === 'Sports' ? 'selected' : '' %>>Sports</option>
+      <option value="Fashion" <%= blogs.category === 'Fashion' ? 'selected' : '' %>>Fashion</option>
+      <option value="Politics" <%= blogs.category === 'Politics' ? 'selected' : '' %>>Politics</option>
+      <option value="Science" <%= blogs.category === 'Science' ? 'selected' : '' %>>Science</option>
+      <option value="Business" <%= blogs.category === 'Business' ? 'selected' : '' %>>Business</option>
+      <option value="Art" <%= blogs.category === 'Art' ? 'selected' : '' %>>Art</option>
+      <option value="Music" <%= blogs.category === 'Music' ? 'selected' : '' %>>Music</option>
+      <option value="Photography" <%= blogs.category === 'Photography' ? 'selected' : '' %>>Photography</option>
+      <option value="DIY" <%= blogs.category === 'DIY' ? 'selected' : '' %>>DIY</option>
+      <option value="Parenting" <%= blogs.category === 'Parenting' ? 'selected' : '' %>>Parenting</option>
+      <option value="Personal" <%= blogs.category === 'Personal' ? 'selected' : '' %>>Personal</option>
+      <option value="Other" <%= blogs.category === 'Other' ? 'selected' : '' %>>Other</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label>Blog</label>
+    <textarea name="blog" class="form-control" placeholder="Type Blog Post..." required autocomplete="off" spellcheck="false"><%= blogs.content %></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>

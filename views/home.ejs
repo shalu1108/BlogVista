@@ -1,0 +1,77 @@
+<%- include('partials/header') -%>
+
+<div class="content-container">
+  <div class="blogheader">
+    <h1 style="color: #0858b4;">Blogs</h1>
+    <form method="GET" action="/home" class="form-inline">
+      <select name="category" class="form-control">
+        <option value="">All Categories</option>
+        <option value="Technology">Technology</option>
+        <option value="Health">Health</option>
+        <option value="Travel">Travel</option>
+        <option value="Food">Food</option>
+        <option value="Lifestyle">Lifestyle</option>
+        <option value="Finance">Finance</option>
+        <option value="Education">Education</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Sports">Sports</option>
+        <option value="Fashion">Fashion</option>
+        <option value="Politics">Politics</option>
+        <option value="Science">Science</option>
+        <option value="Business">Business</option>
+        <option value="Art">Art</option>
+        <option value="Music">Music</option>
+        <option value="Photography">Photography</option>
+        <option value="DIY">DIY</option>
+        <option value="Parenting">Parenting</option>
+        <option value="Personal">Personal</option>
+        <option value="Other">Other</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Filter</button>
+    </form>
+    <button class="homeheaderr"><a href="/compose" class="composebtnn">Compose</a></button>
+  </div>
+  <div class="blogs">
+    <% blogs.forEach(function(blog) { %>
+      <div class="blogcontent">
+        <div class="homebtnn">
+          <form action="/home/<%= blog._id %>?_method=DELETE" method="GET" class="d-inline one">
+            <button type="submit" class="btn btn delete">Delete</button>
+          </form>
+
+          <form action="/edit/<%= blog._id %>" method="GET" class="d-inline two">
+            <a href="/edit"> <button type="submit" class="btn btn edit">Edit</button></a>
+          </form>
+        </div>
+        
+        <h1 class="title"><%= blog.title %></h1>
+        <% if (blog.content.length > 370) { %>
+          <p class="content"><%= blog.content.substring(0, 370) %>...</p>
+          <button class="readmorebtn btn btn-primary">Read More</button>
+          <div class="hidden-content" style="display: none;">
+            <p class="content"><%= blog.content %></p>
+          </div>
+        <% } else { %>
+          <p class="content"><%= blog.content %></p>
+        <% } %>
+
+        <div class="author">
+          <p>~ <%= blog.author %></p>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+</div>
+
+<script>
+  const readMoreButtons = document.querySelectorAll(".readmorebtn");
+  readMoreButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const hiddenContent = this.nextElementSibling;
+      const shortContent = this.previousElementSibling;
+      hiddenContent.style.display = "block";
+      shortContent.style.display = "none";
+      this.style.display = "none";
+    });
+  });
+</script>

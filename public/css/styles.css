@@ -1,0 +1,390 @@
+:root {
+  --primary-color: rgb(1, 32, 81);
+  --primary-color1: rgb(236, 243, 254);
+  --primary-color2: white;
+  --secondary-color:   white;
+  --white: rgb(255, 255, 255);
+  --black: rgb(0, 0, 0);
+  --accent-color: rgb(42, 214, 48);
+}
+
+* {
+  font-family: system-ui;
+  box-sizing: border-box;
+}
+
+
+body {
+  background-color: var(--secondary-color);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container-fluid {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 65px;
+  padding-bottom: 70px;
+}
+
+
+/* Header */
+.navbar {
+  /* background-color: var(--primary-color2); */
+  padding-bottom: 0px;
+  padding-top: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  border: none;
+}
+
+.navbar-brand {
+  font-size: 40px;
+  margin-top: -10px;
+  padding-left: 491px; 
+  color: #0858b4 !important;
+}
+
+.bolded {
+  font-weight:600;
+}
+
+.navbar-nav li a {
+  color: var(--white);
+}
+
+.navbar-nav li a:hover {
+  color: var(--secondary-color) !important;
+}
+
+.navbar-default {
+  border-color: rgb(55, 18, 115);
+}
+
+.navbar-right {
+  float: right !important;
+  margin-right: -100px;
+}
+
+.signheaderr {
+  border-radius: 5px;
+  padding: 5px 8px;
+  color: white;
+  background-color: #3a7bd5;
+  border: none;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.signheaderr:hover {
+  color: var(--white);
+  background-color: #0858b4;
+}
+
+/* Sign-up & Log-in */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 140px);
+}
+
+.signupbox {
+  background-color: var(--white);
+  padding: 30px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0px 2px 10px rgba(0,0,0,0.1);
+}
+
+.btnn, .btnnn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  border-radius: 5px;
+  padding: 10px 20px;
+  border: none;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btnn:hover, .btnnn:hover {
+  background-color: #0858b4;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+/* Home page */
+.content-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 140px);
+  overflow: hidden;
+}
+
+.blogheader {
+  display: flex;
+  justify-content: space-between; 
+  text-align: center;
+  align-items: center;
+  padding: 20px 37px 0px 22px;
+  background-color: var(--white);
+}
+
+.homeheaderr {
+  border-radius: 5px;
+  padding: 8px 8px;
+  background-color: #3a7bd5;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.homeheaderr:hover {
+  background-color: #0858b4;
+}
+
+.composebtnn {
+  font-size: 16px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.composebtnn:hover {
+  background-color: #0858b4;
+  color:white;
+}
+.blogs {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.blogcontent { 
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: var(--primary-color1);
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px -1px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.blogcontent:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 8px -1px rgba(0,0,0,0.2);
+}
+
+.homebtnn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+
+.two {
+  margin-left: 10px;
+}
+
+.title {
+  font-size: 24px;  
+  font-weight: 600;
+  color: var(--primary-color);
+  word-break: break-word;
+  margin-bottom: 15px;
+}
+
+.content {
+  font-size: 16px;
+  color: var(--black);
+  word-break: break-word;
+  line-height: 1.6;
+}
+
+.author {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  color: var(--primary-color);
+  margin-top: 15px;
+}
+
+/* Delete button */
+.delete {
+  background-color: var(--white);
+  color: #e23232;
+  border-radius: 5px;
+  border: 2px solid #e23232;
+  transition: all 0.3s ease;
+}
+
+.delete:hover {
+  background-color: #e23232;
+  color: var(--white);
+}
+
+/* Edit button */
+.edit {
+  background-color: var(--white);
+  color: #38df5f;
+  border-radius: 5px;
+  border: 2px solid #38df5f;
+  transition: all 0.3s ease;
+}
+
+.edit:hover {
+  background-color: #38df5f;
+  color: var(--white);
+}
+
+.footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Read More Button */
+.readmorebtn {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.readmorebtn:hover {
+  background-color: #0858b4;
+}
+
+.hidden-content {
+  margin-top: 10px;
+}
+
+/* Compose Page */
+.form-control {
+  border: 1px solid var(--primary-color);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 0px;
+}
+
+.form-control:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(74, 144, 226, 0.25);
+}
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--secondary-color);
+}
+
+.auth-box {
+  background-color: var(--primary-color1);
+  padding: 30px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-title {
+  font-size: 24px;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #3a7bd5;
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+  background-color: #0858b4;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.auth-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.auth-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .navbar-brand {
+    font-size: 20px;
+  }
+
+  .signupbox {
+    width: 90%;
+  }
+
+  .blogheader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .homeheaderr {
+    margin-top: 10px;
+  }
+
+  .title {
+    font-size: 20px;
+  }
+
+  .content {
+    font-size: 14px;
+  }
+}
